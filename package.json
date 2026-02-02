@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "migrate": "sequelize-cli db:migrate",
-    "seed": "sequelize-cli db:seed:all",
-    "railway": "npm run migrate && npm start"
+    "migrate": "npx sequelize-cli db:migrate --env production",
+    "postinstall": "npx sequelize-cli db:migrate --env production"
   },
   "keywords": [],
   "author": "",
