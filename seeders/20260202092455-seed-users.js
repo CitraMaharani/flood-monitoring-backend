@@ -18,18 +18,8 @@ module.exports = {
         role: 'user',
         createdAt: new Date(),
         updatedAt: new Date()
-      },
-      {
-        id: 17665,
-        username: 'testinguser',
-        password: '$2a$10$9GXWD6xfPC9.PyXR3sh/JOkCsk4lib23HRuiszKjOHFrByg7kG1FK',
-        role: 'user',
-        createdAt: new Date(),
-        updatedAt: new Date()
       }
     ]);
-
-    await queryInterface.sequelize.query(`ALTER TABLE users AUTO_INCREMENT = 17666;`);
   },
 
   async down(queryInterface) {
