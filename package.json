@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "sh start.sh",
-    "migrate": "sequelize-cli db:migrate --env production"
+    "start": "node server.js",
+    "migrate": "npx sequelize-cli db:migrate --env production",
+    "postinstall": "npx sequelize-cli db:migrate --env production"
   },
   "keywords": [],
   "author": "",
