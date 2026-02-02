@@ -2,23 +2,21 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('water_levels', {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true
       },
-      username: {
-        type: Sequelize.STRING(100),
-        allowNull: false
+      sensor_id: {
+        type: Sequelize.STRING(50)
       },
-      password: {
-        type: Sequelize.STRING(255),
-        allowNull: false
+      distance_cm: {
+        type: Sequelize.FLOAT
       },
-      role: {
-        type: Sequelize.ENUM('admin', 'user'),
-        defaultValue: 'user'
+      timestamp: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +30,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('water_levels');
   }
 };
